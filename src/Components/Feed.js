@@ -1,16 +1,16 @@
 import React from 'react';
-// ADD CODE HERE
+import Block from '../Components/Block';
 
 class Feed extends React.Component {
 
     state = {
-      // ADD CODE HERE
+      new_color: null, // ADD CODE HERE
       showopt: false
     }
 
     addBlock = (color) => {
         this.setState({
-        // ADD CODE HERE
+          new_color: color // ADD CODE HERE
       })
     }
 
@@ -32,7 +32,7 @@ class Feed extends React.Component {
       return (
         <div className = 'mainfeed'>
         <div className="input">
-        {/* ADD CODE HERE */}
+        {/*ADD CODE HERE*/} 
         </div>
         <div>
           <button class="button" onClick={this.pickColorlayout}>+ Post Block</button>
