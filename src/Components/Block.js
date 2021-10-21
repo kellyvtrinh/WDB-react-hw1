@@ -10,12 +10,12 @@ class Block extends React.Component {
 
   const mystyle = {
       display: 'flex'    };
-    this.props.attribute
+    // this.props.attribute
 
   return (
     <>
-      <div class = "blockers" style={
-        /*ADD CODE HERE */
+      <div className = "blockers" style={
+        {backgroundColor: this.props.attribute} 
         }>
       </div>
       

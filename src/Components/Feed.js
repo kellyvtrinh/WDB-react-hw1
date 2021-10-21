@@ -4,15 +4,17 @@ import Block from '../Components/Block';
 class Feed extends React.Component {
 
     state = {
-      new_color: null, // ADD CODE HERE
+      blocks: Array(0), // ADD CODE HERE
       showopt: false
     }
 
     addBlock = (color) => {
+        const blocks_copy = this.state.blocks.slice();
+        blocks_copy.unshift(<Block key={blocks_copy.length + 1} attribute={color}></Block>);
         this.setState({
-          new_color: color // ADD CODE HERE
-      })
-    }
+        blocks: blocks_copy// ADD CODE HERE
+      })  
+    } 
 
     pickColorlayout = () => {
       if (this.state.showopt == false) {
@@ -32,10 +34,12 @@ class Feed extends React.Component {
       return (
         <div className = 'mainfeed'>
         <div className="input">
-        {/*ADD CODE HERE*/} 
+        {
+        this.state.blocks.map((block) => block)
+        } 
         </div>
         <div>
-          <button class="button" onClick={this.pickColorlayout}>+ Post Block</button>
+          <button className="button" onClick={this.pickColorlayout}>+ Post Block</button>
         </div>
         { this.state.showopt ?         <div className="pickblock">
         <div>
